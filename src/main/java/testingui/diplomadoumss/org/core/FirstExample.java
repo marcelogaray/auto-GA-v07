@@ -11,7 +11,7 @@ public class FirstExample {
         BroserType browserType = BroserType.valueOf(PropertyAccesor.getInstance().getBrowser());
         Browser browser = DriverFactory.getInstance().getBrowser(browserType);
         browser.getWebDriver().get(PropertyAccesor.getInstance().getURL());
-        browser.getWebDriver().quit();
+       // browser.getWebDriver().quit();
 
 //        exampleMap();
     }
