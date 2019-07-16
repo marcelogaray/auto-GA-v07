@@ -3,6 +3,7 @@ package testingui.diplomadoumss.org.managepage.login;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 /**
@@ -19,6 +20,14 @@ public class Login extends BasePage {
 
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement buttonField;
+
+    public Dashboard setCredentials() throws InterruptedException {
+        setEmail(PropertyAccesor.getInstance().getEmail());
+        setPassword(PropertyAccesor.getInstance().getPassword());
+        pressLogin();
+        Thread.sleep(20000);
+        return new Dashboard();
+    }
 
     public void initBrowser() {
         webDriver.get(PropertyAccesor.getInstance().getURL());
