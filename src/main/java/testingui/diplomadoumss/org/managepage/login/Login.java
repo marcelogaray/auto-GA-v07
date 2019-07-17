@@ -6,6 +6,9 @@ import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
+import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
+import static testingui.diplomadoumss.org.manageevents.Event.fieldWebElement;
+
 /**
  * @author Marcelo Garay
  * @project testingui.diplomadoumss.org
@@ -22,31 +25,24 @@ public class Login extends BasePage {
     private WebElement buttonField;
 
     public Dashboard setCredentials() throws InterruptedException {
-        setEmail(PropertyAccesor.getInstance().getEmail());
-        setPassword(PropertyAccesor.getInstance().getPassword());
-        pressLogin();
-        Thread.sleep(20000);
+        return setEmail(PropertyAccesor.getInstance().getEmail()).
+                setPassword(PropertyAccesor.getInstance().getPassword()).
+                clickLoginButton();
+    }
+
+    public Login setEmail(String email) {
+        fieldWebElement(emailTextField, email);
+        return this;
+    }
+
+    public Login setPassword(String password) {
+        fieldWebElement(passwordField, password);
+        return this;
+    }
+
+    public Dashboard clickLoginButton() {
+        clickWebElement(buttonField);
         return new Dashboard();
-    }
-
-    public void initBrowser() {
-        webDriver.get(PropertyAccesor.getInstance().getURL());
-    }
-
-    public void setEmail(String email){
-        emailTextField.sendKeys(email);
-    }
-
-    public void setPassword(String password) {
-        passwordField.sendKeys(password);
-    }
-
-    public void pressLogin() {
-        buttonField.click();
-    }
-
-    public void finish() {
-        webDriver.quit();
     }
 
 }

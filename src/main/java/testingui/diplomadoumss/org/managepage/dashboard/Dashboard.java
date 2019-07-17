@@ -10,14 +10,15 @@ import testingui.diplomadoumss.org.managepage.cars.Cars;
  */
 public class Dashboard extends BasePage {
 
-    @FindBy(xpath = "//ul[@id='social-sidebar-menu' and @class='list-unstyled components']")
-    private WebElement leftPanel;
-
     @FindBy(xpath = "//a[@href='#Cars']")
     private WebElement cars;
 
     @FindBy(xpath = "//a[@href = 'https://www.phptravels.net/admin-portal/admin/cars']")
     private WebElement option_cars;
+
+    public Dashboard() {
+
+    }
 
     public void clickCars() {
         cars.click();

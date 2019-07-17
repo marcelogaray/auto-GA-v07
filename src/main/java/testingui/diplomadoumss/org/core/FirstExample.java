@@ -15,13 +15,13 @@ public class FirstExample {
         //webDriver.quit();
 
         Login login = new Login();
-        login.initBrowser();
+//        login.initBrowser();
         login.setEmail(PropertyAccesor.getInstance().getEmail());
         login.setPassword(PropertyAccesor.getInstance().getPassword());
-        login.pressLogin();
+        login.clickLoginButton();
 
         Thread.sleep(20000);
-        login.finish();
+        //login.finish();
     }
 
     public static void exampleMap(){
