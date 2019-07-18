@@ -1,17 +1,17 @@
 package testingui.diplomadoumss.org.core;
 
-import org.openqa.selenium.WebDriver;
-import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
+import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
+import testingui.diplomadoumss.org.managepage.login.Login;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class FirstExample {
     public static void main(String[] args) {
-
-        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
-        webDriver.get(PropertyAccesor.getInstance().getURL());
-        webDriver.quit();
+        Login login = new Login();
+        login.initBrowser();
+        login.setCredentials();
+        Dashboard dashboard = new Dashboard();
     }
 
     public static void exampleMap(){
