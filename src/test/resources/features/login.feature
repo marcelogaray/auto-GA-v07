@@ -1,7 +1,9 @@
 Feature: Validaciones de la pagina Login
 
-  Scenario: Cargar pagina PHP Travels
-    Given I load PHP Travels
-    And set my credentials  on 'Login' page
-    And Click 'Hotels' link on 'Left Panel' Page
+
+  Scenario: Load Page NASA
+    Given I load First Page
+    And click NASA API Listing
+    And click NASA API Again
+    And click on Earth
 
