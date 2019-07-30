@@ -8,13 +8,13 @@ Feature: Validactiones de la pagina de Login
 #    And set my credencials  on 'Login' page
 #    And click 'Cars' link on 'Left Panel' page
 #    And click 'Logout' button on 'Header' page
-
+#
   Scenario: Validar "Login" label en la pagina de LOGIN
     Given I load PHP travels
       And fill "test@test.com" email field on 'Login' page
-      And fill "test@test.com" password field on 'Login' page
+#      And fill "test@test.com" password field on 'Login' page
     Then verify the "LOGIN" label button is displayed on 'Login' page
-
+#
 
 #  Scenario Outline: Validar "Login" label en la pagina de LOGIN multiples scenarios
 #    Given I load PHP travels
